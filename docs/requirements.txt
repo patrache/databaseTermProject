@@ -25,6 +25,7 @@ view들 (mvc 에서의 뷰)
 - main
 - signUp
 - login
+- userlist
 - authentication
 - searchChannel
 - searchToken

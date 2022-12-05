@@ -131,3 +131,4 @@ CREATE TABLE Comments (
     Foreign Key (star_id, channel_name, post_write_at) REFERENCES Posts(star_id, channel_name, write_at),
     Foreign Key (writer) REFERENCES Users(id)
 );
+
