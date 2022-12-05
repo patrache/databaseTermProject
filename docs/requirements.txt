@@ -20,3 +20,14 @@
 - 사용자는 채팅방을 만들 수 있다.
 - 사용자는 채팅방에서 사용자들과 채팅을 할 수 있다.
 - 방송에서도 채팅을 할 수 있다.
+
+view들 (mvc 에서의 뷰)
+- main
+- signUp
+- login
+- authentication
+- searchChannel
+- searchToken
+- channel
+- post
+- live
