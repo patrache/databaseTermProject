@@ -14,7 +14,9 @@
     <div><a href="/user/signup">signup</a></div>
     <div><a href="/user/login">login</a></div>
     <div><a href="/user/list">userlist</a></div>
-    <div><a href="/authentication">authentication</a></div>
+    <div><a href="/user/list">userlist</a></div>
+    <div><a href="/star/requestPage">are you star?</a></div>
+    <div><a href="/star/authPage">authentication</a></div>
     <div><a href="/searchChannel">searchChannel</a></div>
     <div><a href="/createChannel">createChannel</a></div>
     <div><a href="/channel">channel</a></div>

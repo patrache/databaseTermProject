@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StarController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,8 +35,11 @@ Route::prefix('user')->group(function() {
     Route::post('/login', [UserController::class, 'login']);
 });
 
-Route::get('/authentication', function () {
-    return view('authentication');
+Route::prefix('star')->group(function(){
+    Route::get('/authPage', [StarController::class, 'authenticatePage']);
+    Route::get('/requestPage', [StarController::class, 'requestAuthenticatePage']);
+    Route::post('/requestAuth', [StarController::class, 'requestAuthentication']);
+    Route::post('/authenticate', [StarController::class, 'authenticate']);
 });
 
 Route::get('/searchChannel', function () {
