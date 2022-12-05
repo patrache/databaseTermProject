@@ -7,6 +7,11 @@
     <title>createChannel</title>
 </head>
 <body>
-    createChannel
+    <div><a href="/">main</a></div>
+    <form action="/channel/create" method="post" enctype="multipart/form-data">
+        @csrf
+        <div>channel name : <input type="text" name="channel_name"></div>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>

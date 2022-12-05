@@ -22,7 +22,6 @@
                 <th>tel</th>
                 <th>contents</th>
                 <th>authenticated</th>
-                <th></th>
             </thead>
             <tbody>
             @foreach ( $starlist as $star )

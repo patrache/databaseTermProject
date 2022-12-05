@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\channelController;
 use App\Http\Controllers\StarController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -42,16 +43,12 @@ Route::prefix('star')->group(function(){
     Route::post('/authenticate', [StarController::class, 'authenticate']);
 });
 
-Route::get('/searchChannel', function () {
-    return view('searchChannel');
-});
-
-Route::get('/createChannel', function () {
-    return view('createChannel');
-});
-
-Route::get('/channel', function () {
-    return view('channel');
+Route::prefix('channel')->group(function(){
+    Route::get('/createChannel', [channelController::class, 'createChannelPage']);
+    Route::get('/searchChannel', [channelController::class, 'searchChannelPage']);
+    Route::get('/live', [channelController::class, 'livePage']);
+    Route::post('/create', [channelController::class, 'createChannel']);
+    Route::post('/search', [channelController::class, 'searchChannel']);
 });
 
 Route::get('/createPost', function () {

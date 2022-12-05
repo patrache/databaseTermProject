@@ -49,13 +49,14 @@ class UserController extends Controller
         $id = (int)$request->input('id');
         $password = (string)$request->input('password');
 
-        $user = DB::select('select name, password from users where id = ?', [$id]);
+        $user = DB::select('select name, password, authenticated from Users left outer join star on users.id = star.user_id where users.id = ?', [$id]);
 
         foreach ($user as $single) {
             if ($single->password == $password) {
                 session([
                     'user_id'=>$id,
-                    'user_name'=>$single->name
+                    'user_name'=>$single->name,
+                    'auth'=>$single->authenticated
                 ]);
                 return redirect('/');
             } else {

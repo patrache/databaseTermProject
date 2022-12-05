@@ -7,6 +7,28 @@
     <title>searchChannel</title>
 </head>
 <body>
-    searchChannel
+    <div><a href="/">main</a></div>
+    <form action="/channel/search" method="post" enctype="multipart/form-data">
+        @csrf
+        <div>channel name : <input type="text" name="channel_name"></div>
+        <button type="submit">Submit</button>
+    </form>
+
+    @if ($message = Session::get('success'))
+        <table>
+            <thead>
+                <th>star</th>
+                <th>channel_name</th>
+            </thead>
+            <tbody>
+            @foreach ( $channel_list as $channel )
+                <tr>
+                    <td>{{ $channel->name }}</td>
+                    <td>{{ $channel->channel_name }}</td>
+                </tr>
+            @endforeach
+            </tbody>            
+        </table>    
+    @endif
 </body>
 </html>
